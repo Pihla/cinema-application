@@ -1,9 +1,8 @@
 package com.example.cinemaapplication.model;
 
 import jakarta.persistence.*;
-
-import java.sql.Date;
 import java.time.LocalDateTime;
+
 
 @Entity
 public class MovieShowtime {
@@ -35,4 +34,16 @@ public class MovieShowtime {
         ESTONIAN, ENGLISH, RUSSIAN
     }
 
+
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public LocalDateTime getTime() {
+        return time;
+    }
+
+    public Language getLanguage() {
+        return language;
+    }
 }

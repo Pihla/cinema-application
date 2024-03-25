@@ -1,6 +1,11 @@
 Pane kirja tööks kulunud aeg ja tee märkmeid selle kohta, mis oli keeruline. Kui jäid mõne probleemi
 lahendamise puhul jänni, pane kirja, kust said abi ja kuidas probleemi lahendasid.
 
+-------
+# Eeldused
+Rakendust kasutab ainult üks kasutaja (seega pole vaja andmebaasis kasutajaid eristada)
+
+
 
 ------------------------
 # Tööprotsess ja raskused
@@ -18,4 +23,5 @@ Front-end raamistikuks valisin Semantic UI ning selle ZIP-faili laadisin alla si
 ## Filmide otsimise back-end - 1h + ???
 Selle kohta, kuidas peaksid failid projektis paiknema, sain abi siit: https://malshani-wijekoon.medium.com/spring-boot-folder-structure-best-practices-18ef78a81819
 Andmebaasist vajaliku info otsimise kohta sain abi siit: https://www.baeldung.com/spring-data-derived-queries
-Andmebaasis ENUMide kasutamise kohta sain abi siit: https://www.baeldung.com/jpa-persisting-enums-in-jpa
+
+Raskusi valmistas see, kuidas repository objekti controlleri klassis kasutada

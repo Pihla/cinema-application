@@ -40,4 +40,20 @@ public class Movie {
     public enum MovieGenre {
         ROMANCE, ACTION, COMEDY, DRAMA, FAMILY, DOCUMENTARY, FANTASY
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public MovieGenre getGenre() {
+        return genre;
+    }
+
+    public AgeLimit getAgeLimit() {
+        return ageLimit;
+    }
+
+    public int getTimeInMinutes() {
+        return timeInMinutes;
+    }
 }
