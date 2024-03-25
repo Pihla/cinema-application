@@ -13,3 +13,9 @@ Projekti loomise ning HTTP-päringute saatmise kohta front-endi ja back-endi vah
 Kohaliku andmebaasi ülesseadmise ja kasutamise kohta sain abi siit: https://spring.io/guides/gs/accessing-data-jpa.
 
 Front-end raamistikuks valisin Semantic UI ning selle ZIP-faili laadisin alla siit: https://semantic-ui.com/introduction/getting-started.html. Panin failid resources/static kausta. Semantic UI kasutamise kohta sain abi dokumentatsioonist (nt nupu tegemise koodi kopeerisin siit: https://semantic-ui.com/elements/button.html).
+
+
+## Filmide otsimise back-end - 1h + ???
+Selle kohta, kuidas peaksid failid projektis paiknema, sain abi siit: https://malshani-wijekoon.medium.com/spring-boot-folder-structure-best-practices-18ef78a81819
+Andmebaasist vajaliku info otsimise kohta sain abi siit: https://www.baeldung.com/spring-data-derived-queries
+Andmebaasis ENUMide kasutamise kohta sain abi siit: https://www.baeldung.com/jpa-persisting-enums-in-jpa

@@ -1,16 +1,21 @@
 package com.example.cinemaapplication;
 
+import com.example.cinemaapplication.model.Movie;
+import com.example.cinemaapplication.model.MovieShowtime;
+import com.example.cinemaapplication.repository.MovieRepository;
+import com.example.cinemaapplication.repository.MovieShowtimeRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+import java.sql.Date;
+import java.time.LocalDateTime;
+import java.util.List;
+
+
 @SpringBootApplication
 public class CinemaApplication {
 
@@ -20,28 +25,43 @@ public class CinemaApplication {
 
     private static final Logger log = LoggerFactory.getLogger(CinemaApplication.class);
 
-    //https://www.jetbrains.com/help/idea/your-first-spring-application.html#add-greeting-method
-    @GetMapping("/hello")
-    public String sayHello(@RequestParam(value = "myName", defaultValue = "World") String name) {
-        return String.format("Hello %s!", name);
-    }
+
 
     //https://spring.io/guides/gs/accessing-data-jpa
     @Bean
-    public CommandLineRunner demo(MovieRepository repository) {
+    public CommandLineRunner demo(MovieRepository movieRepository, MovieShowtimeRepository showtimeRepository) {
         return (args) -> {
             // save a few movies
-            repository.save(new Movie("Taevast sajab lihapalle"));
-            repository.save(new Movie("Harry Potter ja tarkade kivi"));
-            repository.save(new Movie("Kuidas taltsutada lohet"));
+            Movie movie_meatballs = new Movie("Taevast sajab lihapalle", Movie.MovieGenre.FAMILY, Movie.AgeLimit.NO_LIMIT, 82);
+            Movie movie_harry_potter = new Movie("Harry Potter ja tarkade kivi", Movie.MovieGenre.FANTASY, Movie.AgeLimit.NOT_RECOMMENDED_UNDER_12, 96);
+            movieRepository.save(movie_harry_potter);
+            movieRepository.save(movie_meatballs);
 
             // fetch all movies
             log.info("Movies found with findAll():");
             log.info("-------------------------------");
-            repository.findAll().forEach(movie -> {
+            movieRepository.findAll().forEach(movie -> {
                 log.info(movie.toString());
             });
             log.info("");
+
+            // save a few movie showtimes
+            MovieShowtime showtime_hp_1 = new MovieShowtime(movie_harry_potter, LocalDateTime.of(2024, 3, 28, 14, 30, 0, 0), MovieShowtime.Language.ENGLISH);
+            MovieShowtime showtime_meatballs_1 = new MovieShowtime(movie_meatballs,  LocalDateTime.of(2024, 3, 28, 14, 30, 0, 0), MovieShowtime.Language.ESTONIAN);
+            MovieShowtime showtime_hp_2 = new MovieShowtime(movie_harry_potter,  LocalDateTime.of(2024, 3, 29, 18, 0, 0, 0), MovieShowtime.Language.ENGLISH);
+            MovieShowtime showtime_meatballs_2 = new MovieShowtime(movie_meatballs, LocalDateTime.of(2024, 3, 29, 11, 0, 0, 0), MovieShowtime.Language.RUSSIAN);
+            showtimeRepository.save(showtime_hp_1);
+            showtimeRepository.save(showtime_hp_2);
+            showtimeRepository.save(showtime_meatballs_1);
+            showtimeRepository.save(showtime_meatballs_2);
+
+
+            // fetch all showtimes
+            log.info("Showtimes found with findAll():");
+            log.info("-------------------------------");
+            showtimeRepository.findAll().forEach(showtime -> {
+                log.info(showtime.toString());
+            });
 
         };
     }

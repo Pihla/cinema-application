@@ -1,6 +1,7 @@
-package com.example.cinemaapplication;
+package com.example.cinemaapplication.repository;
 import java.util.List;
 
+import com.example.cinemaapplication.model.Movie;
 import org.springframework.data.repository.CrudRepository;
 
 //https://spring.io/guides/gs/accessing-data-jpa
