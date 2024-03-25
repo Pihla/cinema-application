@@ -4,6 +4,7 @@ import com.example.cinemaapplication.model.Movie;
 import com.example.cinemaapplication.model.MovieShowtime;
 import com.example.cinemaapplication.repository.MovieRepository;
 import com.example.cinemaapplication.repository.MovieShowtimeRepository;
+import com.example.cinemaapplication.service.MovieShowtimeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -11,9 +12,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.sql.Date;
 import java.time.LocalDateTime;
-import java.util.List;
 
 
 @SpringBootApplication
@@ -29,7 +28,7 @@ public class CinemaApplication {
 
     //https://spring.io/guides/gs/accessing-data-jpa
     @Bean
-    public CommandLineRunner demo(MovieRepository movieRepository, MovieShowtimeRepository showtimeRepository) {
+    public CommandLineRunner demo(MovieRepository movieRepository, MovieShowtimeRepository showtimeRepository, MovieShowtimeService movieShowtimeService) {
         return (args) -> {
             // save a few movies
             Movie movie_meatballs = new Movie("Taevast sajab lihapalle", Movie.MovieGenre.FAMILY, Movie.AgeLimit.NO_LIMIT, 82);
@@ -60,6 +59,13 @@ public class CinemaApplication {
             log.info("Showtimes found with findAll():");
             log.info("-------------------------------");
             showtimeRepository.findAll().forEach(showtime -> {
+                log.info(showtime.toString());
+            });
+
+            // fetch showtimes with condition
+            log.info("Showtimes found with condition:");
+            log.info("-------------------------------");
+            movieShowtimeService.getShowtimesByFilters("FANTASY", null, null, null, null, 17 ).forEach(showtime -> {
                 log.info(showtime.toString());
             });
 

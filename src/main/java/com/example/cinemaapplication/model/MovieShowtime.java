@@ -15,6 +15,7 @@ public class MovieShowtime {
     private Movie movie;
 
     private LocalDateTime time;
+    @Enumerated(EnumType.ORDINAL)
     private Language language;
 
     public MovieShowtime(Movie movie, LocalDateTime time, Language language) {

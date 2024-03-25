@@ -10,7 +10,7 @@ public class Movie {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String name;
-    @Enumerated(EnumType.ORDINAL)
+
     private MovieGenre genre;
     private AgeLimit ageLimit;
     private int timeInMinutes;
