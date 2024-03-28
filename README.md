@@ -20,8 +20,10 @@ Kohaliku andmebaasi ülesseadmise ja kasutamise kohta sain abi siit: https://spr
 Front-end raamistikuks valisin Semantic UI ning selle ZIP-faili laadisin alla siit: https://semantic-ui.com/introduction/getting-started.html. Panin failid resources/static kausta. Semantic UI kasutamise kohta sain abi dokumentatsioonist (nt nupu tegemise koodi kopeerisin siit: https://semantic-ui.com/elements/button.html).
 
 
-## Filmide otsimise back-end - 2.5h + ???
+## Filmide otsimise back-end - 3h
 Selle kohta, kuidas peaksid failid projektis paiknema, sain abi siit: https://malshani-wijekoon.medium.com/spring-boot-folder-structure-best-practices-18ef78a81819
 Andmebaasist vajaliku info otsimise kohta sain abi siit: https://www.baeldung.com/spring-data-derived-queries, https://www.baeldung.com/spring-data-jpa-query ja SQL päringu koostamisel natuke ka ChatGPT-lt
 
 Raskusi valmistas see, kuidas repository objekti controlleri klassis kasutada, aga lõpuks leidsin annotatsiooni Autowired: https://www.baeldung.com/spring-autowire
+
+## Filmide otsimise front-end

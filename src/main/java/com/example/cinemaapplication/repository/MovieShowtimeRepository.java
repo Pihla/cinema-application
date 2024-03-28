@@ -11,10 +11,10 @@ public interface MovieShowtimeRepository extends CrudRepository<MovieShowtime, L
             "WHERE (m.genre = :genre OR :genre IS NULL)" +
             "AND (m.ageLimit = :ageLimit OR :ageLimit IS NULL)" +
             "AND (mst.language = :language OR :language IS NULL)" +
-            "AND (m.timeInMinutes > :minTime OR :minTime IS NULL)" +
-            "AND (m.timeInMinutes < :maxTime OR :maxTime IS NULL)" +
+            "AND (m.timeInMinutes > :minLength OR :minLength IS NULL)" +
+            "AND (m.timeInMinutes < :maxLength OR :maxLength IS NULL)" +
             "AND (EXTRACT(HOUR FROM mst.time) >= :earliestStartHour OR :earliestStartHour IS NULL)")
 
     public Iterable<MovieShowtime> findByFilters(Movie.MovieGenre genre, Movie.AgeLimit ageLimit,
-                                                 MovieShowtime.Language language, Integer minTime, Integer maxTime, Integer earliestStartHour);
+                                                 MovieShowtime.Language language, Integer minLength, Integer maxLength, Integer earliestStartHour);
 }

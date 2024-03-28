@@ -23,14 +23,14 @@ public class MovieShowtimeService {
         return movieShowtimeRepository.findAll();
     }
 
-    public Iterable<MovieShowtime> getShowtimesByFilters(String genre, String agelimit, String language, Integer minTime,
-                                                         Integer maxTime, Integer earliestStartHour) {
+    public Iterable<MovieShowtime> getShowtimesByFilters(String genre, String agelimit, String language, Integer minLength,
+                                                         Integer maxLength, Integer earliestStartHour) {
 
         return movieShowtimeRepository.findByFilters(
                 genre==null ? null : Movie.MovieGenre.valueOf(genre.toUpperCase()),
                 agelimit==null ? null : Movie.AgeLimit.valueOf(agelimit.toUpperCase()),
                 language==null ? null : MovieShowtime.Language.valueOf(language.toUpperCase()),
-                minTime, maxTime, earliestStartHour);
+                minLength, maxLength, earliestStartHour);
     }
 
 }

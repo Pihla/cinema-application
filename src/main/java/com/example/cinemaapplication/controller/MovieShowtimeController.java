@@ -4,10 +4,10 @@ import com.example.cinemaapplication.model.MovieShowtime;
 import com.example.cinemaapplication.repository.MovieRepository;
 import com.example.cinemaapplication.repository.MovieShowtimeRepository;
 import com.example.cinemaapplication.service.MovieShowtimeService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -27,7 +27,15 @@ public class MovieShowtimeController {
     }
 
     @GetMapping()
-    public Iterable<MovieShowtime> getShowtimes() {
-        return movieShowtimeService.getShowtimes();
+    public Iterable<MovieShowtime> getShowtimes(
+            @RequestParam(value = "genre", required = false) String genre,
+            @RequestParam(value = "ageLimit", required = false) String agelimit,
+            @RequestParam(value = "language", required = false) String language,
+            @RequestParam(value = "minLength", required = false) Integer minLength,
+            @RequestParam(value = "maxLength", required = false) Integer maxLength,
+            @RequestParam(value = "earliestStartHour", required = false) Integer earliestStartHour) {
+
+        return movieShowtimeService.getShowtimesByFilters(genre, agelimit, language, minLength,
+                maxLength, earliestStartHour );
     }
 }
