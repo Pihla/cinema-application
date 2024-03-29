@@ -69,8 +69,8 @@ function displayShowtime(showtime_JSON) {
 
     const genreTextNode = document.createTextNode(showtime_JSON["movie"]["genre"]);
     const ageLimitTextNode = document.createTextNode(showtime_JSON["movie"]["ageLimit"]);
-    const timeInMinutesTextNode = document.createTextNode(showtime_JSON["movie"]["timeInMinutes"]);
-    const showtimeTextNode = document.createTextNode(showtime_JSON["time"]);
+    const timeInMinutesTextNode = document.createTextNode("Kestus: "+ showtime_JSON["movie"]["timeInMinutes"]+" minutit");
+    const showtimeTextNode = document.createTextNode("Algusaeg: " + showtime_JSON["time"]);
     const languageTextNode = document.createTextNode(showtime_JSON["language"]);
 
     const movieInfo = document.createElement("div");
