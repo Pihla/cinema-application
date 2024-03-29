@@ -4,7 +4,7 @@ lahendamise puhul jänni, pane kirja, kust said abi ja kuidas probleemi lahendas
 -------
 # Eeldused
 Rakendust kasutab ainult üks kasutaja (seega pole vaja andmebaasis kasutajaid eristada)
-
+Istekohtade info genereeritakse iga kord juhuslikult ja seda pole vaja salvestada
 
 
 ------------------------
@@ -31,4 +31,6 @@ HTTP-päringute tegemise kohta sain abi siit: https://kinsta.com/knowledgebase/j
 Kasutasin Semantic UI dokumentatsiooni ning guugeldasin ka mõningaid teisi pisiasju (nt kuidas JavaScriptis HTML-elemente tekitada)
 
 
-## Filmide soovitamine - 40 min
+## Filmide soovitamine (back-end ja front-end) - 40 min
+
+## Istekohtade valimine (back-end ja front-end) - 3h

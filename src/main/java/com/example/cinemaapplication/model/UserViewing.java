@@ -11,10 +11,11 @@ public class UserViewing {
     @OneToOne
     MovieShowtime movieShowtime;
 
-    int tickets;
-
-    public UserViewing(MovieShowtime movieShowtime, int tickets) {
+    public UserViewing(MovieShowtime movieShowtime) {
         this.movieShowtime = movieShowtime;
-        this.tickets = tickets;
+    }
+
+    protected UserViewing() {
+
     }
 }

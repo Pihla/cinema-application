@@ -7,6 +7,7 @@ import com.example.cinemaapplication.repository.MovieRepository;
 import com.example.cinemaapplication.repository.MovieShowtimeRepository;
 import com.example.cinemaapplication.repository.UserViewingRepository;
 import com.example.cinemaapplication.service.MovieShowtimeService;
+import com.example.cinemaapplication.service.SeatService;
 import com.example.cinemaapplication.service.UserViewingService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -77,13 +78,15 @@ public class CinemaApplication {
             });
 
             //add user viewings
-            UserViewing viewing1 = new UserViewing(showtime_hp_1, 3);
-            UserViewing viewing2 = new UserViewing(showtime_hp_2, 1);
-            UserViewing viewing3 = new UserViewing(showtime_meatballs_1, 1);
+            UserViewing viewing1 = new UserViewing(showtime_hp_1);
+            UserViewing viewing2 = new UserViewing(showtime_hp_2);
+            UserViewing viewing3 = new UserViewing(showtime_meatballs_1);
 
             userViewingRepository.save(viewing1);
             userViewingRepository.save(viewing2);
             userViewingRepository.save(viewing3);
+
+
 
 
         };

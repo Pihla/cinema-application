@@ -101,5 +101,17 @@ function displayShowtime(showtime_JSON) {
     const currentDiv = document.getElementById("div1");//TODO change element id
     showtimesDiv.insertBefore(movieDiv, currentDiv);
 
+
+
+    //add button to get seat recommendation
+    const seatButton = document.createElement("button");
+    seatButton.className = "ui button";
+    const buttonTextNode = document.createTextNode("Get seat recommendation");
+    seatButton.appendChild(buttonTextNode);
+    seatButton.onclick = function () {
+        location.href = "/seats.html";
+    };
+    movieDiv.insertBefore(seatButton, document.getElementById("TODO change it"))//TODO change
+
 }
 

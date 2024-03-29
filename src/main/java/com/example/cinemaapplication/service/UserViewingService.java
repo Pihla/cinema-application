@@ -6,6 +6,9 @@ import com.example.cinemaapplication.repository.UserViewingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+import java.util.Random;
+
 @Service
 public class UserViewingService {
 
@@ -18,8 +21,8 @@ public class UserViewingService {
     }
 
 
-
     public Iterable<MovieShowtime> getRecommendations() {
         return userViewingRepository.getShowtimesWithMostViewedGenre();
     }
+
 }

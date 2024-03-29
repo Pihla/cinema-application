@@ -1,5 +1,12 @@
 .movieDiv {
-    outline: 3px solid darkblue;
-    background: lightblue!important;
+    background: lavenderblush !important;
+    border-radius: 15px !important;
+    padding: 25px !important;
+    padding-left: 40px !important;
+    margin: 30px !important;
+}
+
+.movieDiv>div>p {
+    font-size: 30px !important;
 }
 
