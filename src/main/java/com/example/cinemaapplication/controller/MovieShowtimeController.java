@@ -3,7 +3,9 @@ package com.example.cinemaapplication.controller;
 import com.example.cinemaapplication.model.MovieShowtime;
 import com.example.cinemaapplication.repository.MovieRepository;
 import com.example.cinemaapplication.repository.MovieShowtimeRepository;
+import com.example.cinemaapplication.repository.UserViewingRepository;
 import com.example.cinemaapplication.service.MovieShowtimeService;
+import com.example.cinemaapplication.service.UserViewingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,12 +20,14 @@ public class MovieShowtimeController {
 
     MovieShowtimeRepository movieShowtimeRepository;
     MovieShowtimeService movieShowtimeService;
+    UserViewingService userViewingService;
 
     @Autowired
-    public MovieShowtimeController(MovieRepository movieRepository, MovieShowtimeRepository movieShowtimeRepository, MovieShowtimeService movieShowtimeService) {
+    public MovieShowtimeController(MovieRepository movieRepository, MovieShowtimeRepository movieShowtimeRepository, MovieShowtimeService movieShowtimeService, UserViewingService userViewingService) {
         this.movieRepository = movieRepository;
         this.movieShowtimeRepository = movieShowtimeRepository;
         this.movieShowtimeService = movieShowtimeService;
+        this.userViewingService = userViewingService;
     }
 
     @GetMapping()
@@ -38,4 +42,11 @@ public class MovieShowtimeController {
         return movieShowtimeService.getShowtimesByFilters(genre, agelimit, language, minLength,
                 maxLength, earliestStartHour );
     }
+
+    @GetMapping("/recommendations")
+    public Iterable<MovieShowtime> getRecommendedShowtimes() {
+        return userViewingService.getRecommendations();
+    }
+
+
 }

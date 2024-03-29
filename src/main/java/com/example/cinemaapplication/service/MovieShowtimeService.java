@@ -19,9 +19,7 @@ public class MovieShowtimeService {
         this.movieShowtimeRepository = movieShowtimeRepository;
     }
 
-    public Iterable<MovieShowtime> getShowtimes() {
-        return movieShowtimeRepository.findAll();
-    }
+
 
     public Iterable<MovieShowtime> getShowtimesByFilters(String genre, String agelimit, String language, Integer minLength,
                                                          Integer maxLength, Integer earliestStartHour) {

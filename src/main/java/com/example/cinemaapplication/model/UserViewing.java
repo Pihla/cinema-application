@@ -12,4 +12,9 @@ public class UserViewing {
     MovieShowtime movieShowtime;
 
     int tickets;
+
+    public UserViewing(MovieShowtime movieShowtime, int tickets) {
+        this.movieShowtime = movieShowtime;
+        this.tickets = tickets;
+    }
 }

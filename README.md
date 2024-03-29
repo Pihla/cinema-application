@@ -29,3 +29,6 @@ Raskusi valmistas see, kuidas repository objekti controlleri klassis kasutada, a
 ## Filmide otsimise front-end - 2.5h
 HTTP-päringute tegemise kohta sain abi siit: https://kinsta.com/knowledgebase/javascript-http-request/
 Kasutasin Semantic UI dokumentatsiooni ning guugeldasin ka mõningaid teisi pisiasju (nt kuidas JavaScriptis HTML-elemente tekitada)
+
+
+## Filmide soovitamine - 40 min

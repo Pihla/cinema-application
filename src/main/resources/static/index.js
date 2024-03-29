@@ -1,12 +1,32 @@
+function getAndDisplayRecommendations() {
+    getAndDisplayShowtimes("http://localhost:8080/showtimes/recommendations")
+}
 
-function getAndDisplayShowtimes() {
-    console.log("getting and displaying showtimes");
-
+function getAndDisplayShowtimes(requestUrl="http://localhost:8080/showtimes") {
     //remove old boxes
     const oldShowtimes = document.getElementsByClassName("movieDiv");
     while(oldShowtimes.length > 0){
         oldShowtimes[0].parentNode.removeChild(oldShowtimes[0]);
     }
+
+    //get showtimes from the server
+    //code for making a http request from here: https://kinsta.com/knowledgebase/javascript-http-request/
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+    xhr.send();
+    xhr.responseType = "json";
+    xhr.onload = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            const data = xhr.response;
+            data.forEach(displayShowtime);
+        } else {
+            console.log(`Error: ${xhr.status}`);
+        }
+    };
+}
+
+function getFormInfoAndDisplayShowtimes() {
+
 
     //compose url to get showtimes from server
     var genreValue = document.getElementById("genreSelect").value;
@@ -32,20 +52,8 @@ function getAndDisplayShowtimes() {
 
     //TODO add min and max movie length
 
-    //get showtimes from the server
-    //code for making a http request from here: https://kinsta.com/knowledgebase/javascript-http-request/
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", requestUrl);
-    xhr.send();
-    xhr.responseType = "json";
-    xhr.onload = () => {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            const data = xhr.response;
-            data.forEach(displayShowtime);
-        } else {
-            console.log(`Error: ${xhr.status}`);
-        }
-    };
+    getAndDisplayShowtimes(requestUrl);
+
 }
 
 function displayShowtime(showtime_JSON) {

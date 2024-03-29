@@ -17,4 +17,8 @@ public interface MovieShowtimeRepository extends CrudRepository<MovieShowtime, L
 
     public Iterable<MovieShowtime> findByFilters(Movie.MovieGenre genre, Movie.AgeLimit ageLimit,
                                                  MovieShowtime.Language language, Integer minLength, Integer maxLength, Integer earliestStartHour);
+
+
+
+
 }
