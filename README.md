@@ -44,4 +44,6 @@ Semantic UI dokumentatsiooni ning väikese guugeldamisega sain kõik lihtsasti t
 # Mis jäi tegemata
 * Jäi panemata kasutajaliidesesse minimaalse ja maksimaalse filmi pikkuse filtrite valimine. Selle implementeerimiseks tuleb teha html elemendid ning JavaScriptis need samuti GET-päringusse sisse panna.
 * Kasutajaliidese disain jäi poolikuks. Tuleks CSS-faile muuta, et elementidele soovitud stiile rakendada.
+* Kasutajaliidese pealehel kuvatakse filmide info inglise keeles ja mitte kasutajasõbralikult. Tuleks muuta index.js failis info kuvamist.
 * index.js failis võiks teha koodi kergemini loetavaks, grupeerides paremini ridu ning kasutades kommentaare.
+
