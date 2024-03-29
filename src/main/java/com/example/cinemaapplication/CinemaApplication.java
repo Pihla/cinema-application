@@ -26,12 +26,11 @@ public class CinemaApplication {
 
     private static final Logger log = LoggerFactory.getLogger(CinemaApplication.class);
 
-
-
-    //https://spring.io/guides/gs/accessing-data-jpa
     @Bean
     public CommandLineRunner demo(MovieRepository movieRepository, MovieShowtimeRepository showtimeRepository, MovieShowtimeService movieShowtimeService, UserViewingRepository userViewingRepository) {
         return (args) -> {
+            //INITIALIZING INFORMATION IN THE DATABASE
+
             // save a few movies
             Movie movie_meatballs = new Movie("Taevast sajab lihapalle", Movie.MovieGenre.FAMILY, Movie.AgeLimit.NO_LIMIT, 82);
             Movie movie_harry_potter = new Movie("Harry Potter ja tarkade kivi", Movie.MovieGenre.FANTASY, Movie.AgeLimit.NOT_RECOMMENDED_UNDER_12, 96);
