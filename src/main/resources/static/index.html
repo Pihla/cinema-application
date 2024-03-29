@@ -4,6 +4,7 @@
 <head>
     <title>Your first Spring application</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src = index.js></script>
 
 
     <!-- next 3 tags copied from here: https://semantic-ui.com/introduction/getting-started.html -->
@@ -14,19 +15,72 @@
             crossorigin="anonymous">
     </script>
     <script src="Semantic-UI-CSS-master/semantic.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body onload="getAndDisplayShowtimes()">
 
-<button class="ui red basic button">Red</button>
-<button class="ui orange basic button">Orange</button>
-
-
-<!-- https://www.jetbrains.com/help/idea/your-first-spring-application.html#add-home-page -->
-
-<form action="/showtimes" method="GET" id="nameForm">
-    <div>
-        <button>Give me showtimes!</button>
+<form class="ui form">
+    <div class="field">
+        <label>Filmižanr</label>
+        <label>
+            <select class="ui fluid dropdown" id="genreSelect">
+                <option value="">Vali filmižanr</option>
+                <option value="ROMANCE">Romantika</option>
+                <option value="ACTION">Põnevusfilm</option>
+                <option value="COMEDY">Komöödia</option>
+                <option value="DRAMA">Draama</option>
+                <option value="FAMILY">Pere</option>
+                <option value="DOCUMENTARY">Dokumentaal</option>
+                <option value="FANTASY">Fantaasia</option>
+            </select>
+        </label>
     </div>
+
+    <div class="field">
+        <label>Filmi vanusepiirang</label>
+        <select class="ui fluid dropdown" id="ageLimitSelect">
+            <option value="">Vali vanusepiirang</option>
+            <option value="NO_LIMIT">Piiranguta</option>
+            <option value="NOT_RECOMMENDED_UNDER_6">Mitte soovitatav alla 6</option>
+            <option value="NOT_RECOMMENDED_UNDER_12">Mitte soovitatav alla 12</option>
+            <option value="FORBIDDEN_UNDER_12">Keelatud alla 12</option>
+            <option value="NOT_RECOMMENDED_UNDER_16">Mitte soovitatav alla 16</option>
+            <option value="FORBIDDEN_UNDER_16">Keelatud alla 16</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label>Keel</label>
+        <select class="ui fluid dropdown" id="languageSelect">
+            <option value="">Vali keel</option>
+            <option value="ESTONIAN">Eesti keel</option>
+            <option value="ENGLISH">Inglise keel</option>
+            <option value="RUSSIAN">Vene keel</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label>Varaseim algusaeg</label>
+        <select class="ui fluid dropdown" id="earliestStartHourSelect">
+            <option value="">Vali varaseim algusaeg</option>
+            <option value="14">14.00</option>
+            <option value="18">18.00</option>
+            <option value="20">20.00</option>
+            <option value="22">22.00</option>
+        </select>
+    </div>
+
+    <div class="ui button" onclick="getAndDisplayShowtimes()">Rakenda filtreid</div>
 </form>
+
+
+
+<div class="ui items" id = "showtimes">
+    <div id="div1"></div>
+</div>
+
+
 </body>
 </html>

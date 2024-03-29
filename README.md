@@ -26,4 +26,6 @@ Andmebaasist vajaliku info otsimise kohta sain abi siit: https://www.baeldung.co
 
 Raskusi valmistas see, kuidas repository objekti controlleri klassis kasutada, aga lõpuks leidsin annotatsiooni Autowired: https://www.baeldung.com/spring-autowire
 
-## Filmide otsimise front-end
+## Filmide otsimise front-end - 2.5h
+HTTP-päringute tegemise kohta sain abi siit: https://kinsta.com/knowledgebase/javascript-http-request/
+Kasutasin Semantic UI dokumentatsiooni ning guugeldasin ka mõningaid teisi pisiasju (nt kuidas JavaScriptis HTML-elemente tekitada)
