@@ -17,6 +17,7 @@ function getAndDisplaySeatInfo() {
 
             const data = xhr.response;
 
+            //display all seats
             var seatsDiv = document.createElement("div");
             data.forEach(row => {
                 var rowElement = document.createElement("div");
@@ -38,14 +39,7 @@ function getAndDisplaySeatInfo() {
                 seatsDiv.appendChild(rowElement);
             })
 
-
-            /*const seatButton = document.createElement("button");
-            seatButton.className = "ui button";
-            const buttonTextNode = document.createTextNode("Get seat recommendation");
-            seatButton.appendChild(buttonTextNode);*/
-
-
-            document.body.insertBefore(seatsDiv, document.getElementById("change me")) //TODO change it
+            document.body.appendChild(seatsDiv);
 
         } else {
             console.log(`Error: ${xhr.status}`);

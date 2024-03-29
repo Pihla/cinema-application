@@ -15,7 +15,7 @@ public interface MovieShowtimeRepository extends CrudRepository<MovieShowtime, L
             "AND (m.timeInMinutes < :maxLength OR :maxLength IS NULL)" +
             "AND (EXTRACT(HOUR FROM mst.time) >= :earliestStartHour OR :earliestStartHour IS NULL)")
 
-    public Iterable<MovieShowtime> findByFilters(Movie.MovieGenre genre, Movie.AgeLimit ageLimit,
+    Iterable<MovieShowtime> findByFilters(Movie.MovieGenre genre, Movie.AgeLimit ageLimit,
                                                  MovieShowtime.Language language, Integer minLength, Integer maxLength, Integer earliestStartHour);
 
 

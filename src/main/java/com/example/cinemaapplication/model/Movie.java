@@ -3,7 +3,6 @@ package com.example.cinemaapplication.model;
 import jakarta.persistence.*;
 
 @Entity
-//https://spring.io/guides/gs/accessing-data-jpa
 public class Movie {
 
     @Id

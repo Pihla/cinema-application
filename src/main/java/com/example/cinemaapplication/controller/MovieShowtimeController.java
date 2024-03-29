@@ -1,9 +1,7 @@
 package com.example.cinemaapplication.controller;
 
 import com.example.cinemaapplication.model.MovieShowtime;
-import com.example.cinemaapplication.repository.MovieRepository;
 import com.example.cinemaapplication.repository.MovieShowtimeRepository;
-import com.example.cinemaapplication.repository.UserViewingRepository;
 import com.example.cinemaapplication.service.MovieShowtimeService;
 import com.example.cinemaapplication.service.UserViewingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/showtimes")
 public class MovieShowtimeController {
-    MovieRepository movieRepository;
-
     MovieShowtimeRepository movieShowtimeRepository;
     MovieShowtimeService movieShowtimeService;
     UserViewingService userViewingService;
 
     @Autowired
-    public MovieShowtimeController(MovieRepository movieRepository, MovieShowtimeRepository movieShowtimeRepository, MovieShowtimeService movieShowtimeService, UserViewingService userViewingService) {
-        this.movieRepository = movieRepository;
+    public MovieShowtimeController(MovieShowtimeRepository movieShowtimeRepository, MovieShowtimeService movieShowtimeService, UserViewingService userViewingService) {
         this.movieShowtimeRepository = movieShowtimeRepository;
         this.movieShowtimeService = movieShowtimeService;
         this.userViewingService = userViewingService;

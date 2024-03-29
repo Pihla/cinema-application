@@ -48,16 +48,14 @@ function getFormInfoAndDisplayShowtimes() {
         requestUrl += "earliestStartHour=" + earliestStartHourValue + "&";
     }
 
-    console.log(requestUrl);
+    //TODO add min and max movie length filters
 
-    //TODO add min and max movie length
 
     getAndDisplayShowtimes(requestUrl);
 
 }
 
 function displayShowtime(showtime_JSON) {
-
 
     const movieDiv = document.createElement("div");
     movieDiv.className = "movieDiv item";
@@ -90,7 +88,6 @@ function displayShowtime(showtime_JSON) {
     movieInfo.appendChild(document.createElement("br"));
     movieInfo.appendChild(languageTextNode);
 
-
     movieDiv.appendChild(movieDivContentDiv);
     movieDivContentDiv.appendChild(movieTitleElement);
     movieTitleElement.appendChild(movieTitle);
@@ -98,20 +95,18 @@ function displayShowtime(showtime_JSON) {
 
     // add the newly created elements with their content into the DOM
     const showtimesDiv = document.getElementById("showtimes");
-    const currentDiv = document.getElementById("div1");//TODO change element id
-    showtimesDiv.insertBefore(movieDiv, currentDiv);
-
+    showtimesDiv.appendChild(movieDiv);
 
 
     //add button to get seat recommendation
     const seatButton = document.createElement("button");
     seatButton.className = "ui button";
-    const buttonTextNode = document.createTextNode("Get seat recommendation");
+    const buttonTextNode = document.createTextNode("Soovita istekohti");
     seatButton.appendChild(buttonTextNode);
     seatButton.onclick = function () {
         location.href = "/seats.html";
     };
-    movieDiv.insertBefore(seatButton, document.getElementById("TODO change it"))//TODO change
+    movieDiv.appendChild(seatButton);
 
 }
 

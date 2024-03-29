@@ -1,6 +1,4 @@
 package com.example.cinemaapplication.repository;
-
-import com.example.cinemaapplication.model.Movie;
 import com.example.cinemaapplication.model.MovieShowtime;
 import com.example.cinemaapplication.model.UserViewing;
 import org.springframework.data.jpa.repository.Query;
@@ -16,5 +14,5 @@ public interface UserViewingRepository extends CrudRepository<UserViewing, Long>
             "ORDER BY COUNT(*) DESC " +
             "LIMIT 1)"
     )
-    public Iterable<MovieShowtime> getShowtimesWithMostViewedGenre();
+    Iterable<MovieShowtime> getShowtimesWithMostViewedGenre();
 }

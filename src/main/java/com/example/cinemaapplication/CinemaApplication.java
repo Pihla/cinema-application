@@ -7,8 +7,6 @@ import com.example.cinemaapplication.repository.MovieRepository;
 import com.example.cinemaapplication.repository.MovieShowtimeRepository;
 import com.example.cinemaapplication.repository.UserViewingRepository;
 import com.example.cinemaapplication.service.MovieShowtimeService;
-import com.example.cinemaapplication.service.SeatService;
-import com.example.cinemaapplication.service.UserViewingService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
